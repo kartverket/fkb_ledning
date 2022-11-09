@@ -1269,7 +1269,7 @@ Den p&#229;krevde egenskapen _konstruksjon_ benyttes for &#229; angi hvilken typ
 
 Den p&#229;krevde egenskapen _belysning_ benyttes for &#229; angi om det henger lysarmatur i masten eller ikke.
 
-For mast som er h&#248;yere enn 15 meter skal _vertikalAvstand_ angis. For mast som har ytterliner med avstand lengre enn 10 meter fra hverandre, skal st&#248;rste avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen _linjebredde_. Disse egenskapene kan benyttes for visualisering av store master og til beregning av omr&#229;det som linene dekker ved store anlegg som for eksempel Statnett sitt sentralnett.
+For mast som er h&#248;yere enn 15 meter skal _vertikalAvstand_ angis. For mast som har ytterliner med avstand lengre enn 10 meter fra hverandre, skal st&#248;rste avstanden mellom ytterfasene (linene) i ei mast oppgis med egenskapen _linjebredde_. Disse egenskapene kan benyttes for visualisering av store master og til beregning av omr&#229;det som linene dekker ved store anlegg som for eksempel Statnett sitt sentralnett. Disse egenskapene skal registreres uavhengig av hverandre. Hvis for eksempel avstand mellom ytterfasene er &gt; 10 meter og vertikal avstand p&#229; mast er &lt; 15 meter, er det ikke p&#229;krevd &#229; registrere vertikalAvstand. Tilsvarende hvis vertikal avstand p&#229; mast er &gt; 15 meter og linjebredde &lt; 10 meter, er det ingen krav om &#229; registrere linjebredde.
 
 Mast og knekkpunkt i Trase skal ha samme posisjon (fortrinnsvis i b&#229;de grunnriss og h&#248;yde, minimum i grunnriss).
 
@@ -2395,7 +2395,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figur
 ==== Tilleggsinformasjon for fotogrammetrisk registrering
 Brukes ved registrering av traseer mellom master. En trase beskriver den geografisk plassering for en eller flere ledninger.
 
-Registreres som rett linje mellom punkter i master. Det skal kun registreres nodepunkt eller knutepunkt der hvor traseen er tilknyttet et annet fysisk objekt (Mast, Nettverkstasjon eller Flymark&#248;r).
+Registreres som rett linje mellom punkter i master. Det skal kun registreres nodepunkt eller knutepunkt der hvor traseen er tilknyttet et annet fysisk objekt (Mast, Nettverkstasjon eller Flymark&#248;r). 
 
 Ved fotogrammetrisk registrering kan det v&#230;re vanskelig &#229; skille mellom hva som er lavspent og ekom. Det kan derfor v&#230;re aktuelt &#229; lage manus f&#248;r kartkonstruksjon.
 
@@ -2414,6 +2414,9 @@ Hvert punkt i trasen skal ha lik koordinat som objekttype Mast, Nettverkstasjon 
 * *andre traseer (luftspenn) lengre enn 100 meter*
 
 *Lavspent, belysning og ekom traseer skal ikke fotogrammetrisk registreres med mindre dette avtales s&#230;rskilt (er opsjonelt).*
+
+Der hvor opsjonen for konstruksjon av lavspent og ekom er utl&#248;st skal disse traseene konstrueres helt frem til abonnent, typisk husvegg. For traseer som stopper i en bygning eller i en annen st&#248;rre konstruksjon skal det ikke konstrueres mast i dette trase endepunktet.
+
  
  
 '''
