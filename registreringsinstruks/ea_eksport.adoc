@@ -588,7 +588,7 @@ image::figurer\kanal.png[link=figurer\kanal.png, Alt="Registrering av kabelkanal
  
 [[kum]]
 === Objekttype: Kum
-*Definisjon fra FKB produktspesifikasjon*: et fysisk objekt som regel av st&#229;l, plast eller betong som er gravd ned i bakken, og som lager et rom
+*Definisjon fra FKB produktspesifikasjon*: et fysisk objekt som regel av st&#229;l, plast eller betong som er gravd ned i bakken, og som lager et rom 
 
 Merknad FKB:
 Ytterkant topp kumkonstruksjon der denne er synlig. 
@@ -2697,9 +2697,9 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figur
 ==== Tilleggsinformasjon for fotogrammetrisk registrering
 Benyttes for &#229; registrere vindturbiner. 
 
-Egenskapene _navh&#248;yde_ og _rotorbladlengde_ skal registreres for &#229; angi utstrekning til Vindturbinen. Disse egenskapene, i tillegg til registrert posisjon, kan benyttes til visualisere den romlige utstrekningen for vindturbinen.
+Egenskapene _navh&#248;yde_ og _rotorbladlengde_ skal registreres for &#229; angi utstrekning til vindturbinen. Disse egenskapene, i tillegg til registrert posisjon, kan benyttes til visualisere den romlige utstrekningen for vindturbinen.
 
-Fotavtrykket for Vindturbin registreres som Vindturbinomriss.
+Fotavtrykket for Vindturbin registreres som Vindturbinomriss. Vindturbin skal registreres som _ledningsnettverkstype_ hogspent. 
  
  
 '''
@@ -2915,7 +2915,7 @@ image::figurer\vindturbin2.png[link=figurer\vindturbin2.png, Alt="Illustrasjon s
  
 [discrete]
 ==== Tilleggsinformasjon for fotogrammetrisk registrering
-Omriss av Vindturbin
+Omriss av Vindturbin. Vindturbinomriss skal registreres som _ledningsnettverkstype_ hogspent.
  
  
 '''
