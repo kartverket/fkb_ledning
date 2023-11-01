@@ -18,12 +18,12 @@ ifdef::backend-pdf[:toc: macro]
 :prodspekbase-url: https://sosi.geonorge.no/produktspesifikasjoner/
 :umlbase-url: https://sosi.geonorge.no/uml-modeller/sosi-del-3-produktspesifikasjoner/
 :reginstrbase-url: https://sosi.geonorge.no/registreringsinstrukser/
-:fkbGenerellDel-url: https://sosi.geonorge.no/Standarder/FKB_generell_del/5.0
+:fkbGenerellDel-url: https://sosi.geonorge.no/Standarder/FKB_generell_del/5.1
 :title-logo-image: image:../felles_reginst/figurer/geovekst.jpg[bottom=90%, align=center, pdfwidth=1.5in]
 :fkbdatasett: {datasett} {versjon}
 :skjema-url: {skjemabase-url}{datasett}/{versjon}
 :prodspek-url: {prodspekbase-url}{datasett}
 :uml-url: {umlbase-url}{datasett}/{versjon}
 :reginstr-url: {reginstrbase-url}{datasett}/{versjon}/{reginstr-type}_{underversjon}
-:reginstr-url-ny: {reginstrbase-url}{datasett}/{versjon}/{reginstr-type}_{erstattet-av}
-:reginstr-url-erstatter: {reginstrbase-url}{datasett}/{versjon}/{reginstr-type}_{erstatter}
+:reginstr-url-ny: {reginstrbase-url}{datasett}/{siste-versjon}
+:reginstr-url-erstatter: {reginstrbase-url}{datasett}/{versjon-erstatter}/{reginstr-type}_{underversjon-erstatter}
