@@ -2413,7 +2413,7 @@ Hvert punkt i trasen skal ha lik koordinat som objekttype Mast, Nettverkstasjon 
 * *h&#248;gspenttraseer*
 * *andre traseer (luftspenn) lengre enn 100 meter*
 
-*Lavspent, belysning og ekom traseer skal ikke fotogrammetrisk registreres med mindre dette avtales s&#230;rskilt (er opsjonelt).*
+*Lavspent og ekom traseer skal ikke fotogrammetrisk registreres med mindre dette avtales s&#230;rskilt (er opsjonelt).*
 
 Der hvor opsjonen for konstruksjon av lavspent og ekom er utl&#248;st skal disse traseene konstrueres helt frem til abonnent, typisk husvegg. For traseer som stopper i en bygning eller i en annen st&#248;rre konstruksjon skal det ikke konstrueres mast i dette trase endepunktet.
 
