@@ -238,84 +238,11 @@ SOSI_navn: Kurve +
  
 |Subtyper:
 |<<kabelkanal,«FeatureType» Kabelkanal>> +
-<<lidarmetadata,«FeatureType» LidarMetadata>> +
+<<trase,«FeatureType» Trase>> +
+<<jordingsledning,«FeatureType» Jordingsledning>> +
+<<luftledning,«FeatureType» Luftledning>> +
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Kjernemodell::«featureType» Ledning +
-|===
- 
-'''
- 
-[[lidarmetadata]]
-===== «FeatureType» LidarMetadata (abstrakt)
-*Definisjon:* informasjon om punktskyen som ligger til grunn for klassifisering og vektorisering
- 
-[discrete]
-====== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*antallLaserPunkt*
- 
-|Definisjon: 
-|antallet klassifiserte laserpunkt som er med på å bestemme vektorisert objekt
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: H + 
-SOSI_lengde: 5 + 
-SOSI_navn: ANTALL_LASERPUNKT + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*maksVertikalAvstand*
- 
-|Definisjon: 
-|maksimal avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<vertikalavstandledning,«dataType» VertikalAvstandLedning>>
-|Profilparametre i tagged values: 
-|
-SOSI_navn: MAKS_VERTIKALUTSTREKNING + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*minVertikalAvstand*
- 
-|Definisjon: 
-|minste avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate
- 
-|Multiplisitet: 
-|[0..1]
- 
-|Type: 
-|<<vertikalavstandledning,«dataType» VertikalAvstandLedning>>
-|Profilparametre i tagged values: 
-|
-SOSI_navn: MIN_VERTIKALUTSTREKNING + 
-|===
- 
-[discrete]
-====== Arv og realiseringer
-[cols="20,80"]
-|===
-|Supertype: 
-|<<ledning,«FeatureType» Ledning>>
- 
-|Subtyper:
-|<<luftledning,«FeatureType» Luftledning>> +
-<<jordingsledning,«FeatureType» Jordingsledning>> +
-<<trase,«FeatureType» Trase>> +
 |===
  
 '''
@@ -464,7 +391,8 @@ SOSI_navn: NVDBPEKER +
 |<<kvalitetpåkrevd,«FeatureType» KvalitetPåkrevd>>
  
 |Subtyper:
-|<<koplinggrense,«FeatureType» KoplingGrense>> +
+|<<ledningvertikalavstand,«FeatureType» LedningVertikalAvstand>> +
+<<koplinggrense,«FeatureType» KoplingGrense>> +
 <<ledning,«FeatureType» Ledning>> +
 <<koplingpunkt,«FeatureType» KoplingPunkt>> +
 <<koplingsenterlinje,«FeatureType» KoplingSenterlinje>> +
@@ -500,6 +428,11 @@ image::diagrammer/Kabelkanal - alle egenskaper og realisering.png[link=diagramme
  
 .Kum og Kumlokk - alle egenskaper og realisering 
 image::diagrammer/Kum og Kumlokk - alle egenskaper og realisering.png[link=diagrammer/Kum og Kumlokk - alle egenskaper og realisering.png, Alt="Diagram med navn Kum og Kumlokk - alle egenskaper og realisering som viser UML-klasser beskrevet i teksten nedenfor."]
+ 
+'''
+ 
+.LedningVertikalAvstand - alle egenskaper og realisering 
+image::diagrammer/LedningVertikalAvstand - alle egenskaper og realisering.png[link=diagrammer/LedningVertikalAvstand - alle egenskaper og realisering.png, Alt="Diagram med navn LedningVertikalAvstand - alle egenskaper og realisering som viser UML-klasser beskrevet i teksten nedenfor."]
  
 '''
  
@@ -616,7 +549,7 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figur
 [cols="20,80"]
 |===
 |Supertype: 
-|<<lidarmetadata,«FeatureType» LidarMetadata>>
+|<<ledning,«FeatureType» Ledning>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» Jordingsledning +
@@ -667,6 +600,152 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figur
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Kum +
+|===
+ 
+'''
+ 
+[[ledningvertikalavstand]]
+===== «FeatureType» LedningVertikalAvstand (abstrakt)
+*Definisjon:* punkt som angir maks/min vertikalavstand for et luftspenn
+ 
+[discrete]
+====== Egenskaper
+[cols="20,80"]
+|===
+|*Navn:* 
+|*punkt*
+ 
+|Definisjon: 
+|posisjon for måling av vertikalavstand
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vertikalAvstandType*
+ 
+|Definisjon: 
+|angir om det er maks/min eller ev. en annen type vertikalavstand som objektet angir
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|<<vertikalavstandtype,«CodeList» VertikalAvstandType>>
+|Profilparametre i tagged values: 
+|
+SOSI_navn: VERTIKALAVSTANDTYPE + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*vertikalAvstand*
+ 
+|Definisjon: 
+|avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate
+
+Enhet: meter
+ 
+|Multiplisitet: 
+|[1..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Real[Real]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: D + 
+SOSI_lengde: 6.2 + 
+SOSI_navn: VERTIKALAVSTAND + 
+|===
+[cols="20,80"]
+|===
+|*Navn:* 
+|*antallLaserPunkt*
+ 
+|Definisjon: 
+|antallet klassifiserte laserpunkt som er med på å bestemme vektorisert objekt. Kan angis der laserdata er brukt til innmåling
+ 
+|Multiplisitet: 
+|[0..1]
+ 
+|Type: 
+|http://skjema.geonorge.no/SOSI/basistype/Integer[Integer]
+|Profilparametre i tagged values: 
+|
+SOSI_datatype: H + 
+SOSI_lengde: 5 + 
+SOSI_navn: ANTALL_LASERPUNKT + 
+|===
+ 
+[discrete]
+====== Roller
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*tilknyttetJordingsledning*
+ 
+|Definisjon:
+|referanse til objekt som vertikalavstanden er knyttet til
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|<<jordingsledning,«FeatureType» Jordingsledning>>
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*tilknyttetTrase*
+ 
+|Definisjon:
+|referanse til objekt som vertikalavstanden er knyttet til
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|<<trase,«FeatureType» Trase>>
+|===
+[cols="20,80"]
+|===
+|*Rollenavn:* 
+|*tilknyttetLuftledning*
+ 
+|Definisjon:
+|referanse til objekt som vertikalavstanden er knyttet til
+ 
+|Multiplisitet: 
+|[0..*]
+ 
+|Til klasse
+|<<luftledning,«FeatureType» Luftledning>>
+|===
+ 
+[discrete]
+====== Restriksjoner
+[cols="20,80"]
+|===
+|*Navn:* 
+|*skal alltid beskrive et luftspenn*
+ 
+|Beskrivelse: 
+|LedningVertikalAvstand
+ 
+|===
+ 
+[discrete]
+====== Arv og realiseringer
+[cols="20,80"]
+|===
+|Supertype: 
+|<<nettverkskomponent,«FeatureType» Nettverkskomponent>>
+ 
 |===
  
 '''
@@ -771,7 +850,7 @@ SOSI_navn: FASE +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<lidarmetadata,«FeatureType» LidarMetadata>>
+|<<ledning,«FeatureType» Ledning>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 EL-nettverk::«featureType» EL_Luftlinje +
@@ -1248,7 +1327,7 @@ SOSI_navn: TRASENAVN +
 [cols="20,80"]
 |===
 |Supertype: 
-|<<lidarmetadata,«FeatureType» LidarMetadata>>
+|<<ledning,«FeatureType» Ledning>>
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Trase +
@@ -1284,7 +1363,7 @@ Enhet: meter
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
-SOSI_lengde: 3.3 + 
+SOSI_lengde: 6.2 + 
 SOSI_navn: ROTORBLADLENGDE + 
 |===
 [cols="20,80"]
@@ -1305,7 +1384,7 @@ Enhet: meter
 |Profilparametre i tagged values: 
 |
 SOSI_datatype: D + 
-SOSI_lengde: D3.3 + 
+SOSI_lengde: 6.2 + 
 SOSI_navn: NAVHØYDE + 
 |===
  
@@ -1394,70 +1473,6 @@ image::http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0/figur
  
 |Realisering av: 
 |«ApplicationSchema» SOSI Ledning 4.6/Ledning 4.6 Generell del/Felleskomponenter::«featureType» Åk +
-|===
-<<<
-'''
-==== Pakke: Datatyper
-*Definisjon:* Alle Datatyper (gruppeegenskaper) som ikke er en del av de generelle FKB elementene, men som inngår i denne spesifikke FKB-datamodellen.
- 
-'''
- 
-.Fagspesifikke datatyper FKB-Ledning 
-image::diagrammer/Fagspesifikke datatyper FKB-Ledning.png[link=diagrammer/Fagspesifikke datatyper FKB-Ledning.png, Alt="Diagram med navn Fagspesifikke datatyper FKB-Ledning som viser UML-klasser beskrevet i teksten nedenfor."]
- 
-'''
- 
-[[vertikalavstandledning]]
-===== «dataType» VertikalAvstandLedning
-*Definisjon:* ledningens høyde over/til terreng, vann eller sjø
- 
-[discrete]
-====== Egenskaper
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vertikalAvstandPosisjon*
- 
-|Definisjon: 
-|posisjonen til det punktet på objektet hvor vertikal avstand er angitt
-
-Merknad FKB:
-Ved SOSI-format realisering skal vertikalhøydeposisjonen angis på følgende måte: ...NØHKOOR "&lt;KOORSYS&gt; &lt;N&gt; &lt;Ø&gt; &lt;H&gt;" 
-
-Eksempel: ...NØHKOOR "22 7175399.09 395657.11 219.82"
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|http://skjema.geonorge.no/SOSI/basistype/GM_Point[GM_Point]
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: T + 
-SOSI_lengde: 70 + 
-SOSI_navn: NØHKOOR + 
-|===
-[cols="20,80"]
-|===
-|*Navn:* 
-|*vertikalAvstand*
- 
-|Definisjon: 
-|avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate
-
-Enhet: meter
- 
-|Multiplisitet: 
-|[1..1]
- 
-|Type: 
-|<<real,«dataType» Real>>
-|Profilparametre i tagged values: 
-|
-SOSI_datatype: 8.2 + 
-SOSI_datatype: D + 
-SOSI_lengde: 8.2 + 
-SOSI_navn: VERTIKALAVSTAND + 
 |===
 <<<
 '''
@@ -1604,6 +1619,33 @@ Merknad: Enkelte av kodene er stereotypet for å fortelle hvor konstruksjonstype
  
 |codeList
 |https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/punktplassering
+ 
+|SOSI_datatype
+|T
+ 
+|SOSI_lengde
+|20
+ 
+|SOSI_navn
+|BELYSNINGSPLASSERING
+ 
+|===
+ 
+'''
+ 
+[[vertikalavstandtype]]
+===== «CodeList» VertikalAvstandType
+*Definisjon:* Angir om vertikalavstanden er maks/min eller ev. av en annen type
+ 
+[discrete]
+====== Profilparametre i tagged values
+[cols="20,80"]
+|===
+|asDictionary
+|true
+ 
+|codeList
+|https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0/vertikalavstandtype
  
 |SOSI_datatype
 |T
