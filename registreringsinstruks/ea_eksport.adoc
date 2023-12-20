@@ -2697,7 +2697,7 @@ Benyttes for &#229; registrere vindturbiner.
 
 Egenskapene _navh&#248;yde_ og _rotorbladlengde_ skal registreres for &#229; angi utstrekning til Vindturbinen. Disse egenskapene, i tillegg til registrert posisjon, kan benyttes til visualisere den romlige utstrekningen for vindturbinen.
 
-Fotavtrykket for Vindturbin registreres som Vindturbinomriss. Vindturbin skal registreres som _ledningsnettverkstype_ hogspent.
+Fotavtrykket for Vindturbin registreres som Vindturbinomriss. Vindturbin skal registreres som _hovedbruk_ hogspent.
  
  
 '''
@@ -2913,7 +2913,7 @@ image::figurer\vindturbin2.png[link=figurer\vindturbin2.png, Alt="Illustrasjon s
  
 [discrete]
 ==== Tilleggsinformasjon for fotogrammetrisk registrering
-Omriss av Vindturbin. Vindturbinomriss skal registreres som _ledningsnettverkstype_ hogspent.
+Omriss av Vindturbin. Vindturbinomriss skal registreres som _hovedbruk_ hogspent.
  
  
 '''
