@@ -57,13 +57,10 @@ Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de v
 
 ==== Endringer fra FKB-Leding 5.0 til FKB-Ledning 5.1
 
+* Innført objekttypen LedningVertikalAvstand med assosiasjon til Trase, Luftledning og Jordingsledning (i stedet for datatypen VertikalAvstandLedning i FLB-Ledning 5.0)
 * Lagt inn taggen inlineOrByReference=byReference på alle assosiasjoner
+* Justert/rettet taggen SOSI_lengde på real-egenskaper på objekttype Vindturbin
 
-****
-
-Må avklares: Ny modellering av maks/min vertikalutrekning som håndteres i dataflyten (geosynkronisering ++) må på plass
-
-****
 
 
 ==== Endringer fra FKB-Ledning 4.6 til FKB-Ledning 5.0

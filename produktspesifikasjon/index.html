@@ -522,7 +522,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#jordingsledning">5.2.2.3. «FeatureType» Jordingsledning</a></li>
 <li><a href="#kabelkanal">5.2.2.4. «FeatureType» Kabelkanal</a></li>
 <li><a href="#kum">5.2.2.5. «FeatureType» Kum</a></li>
-<li><a href="#ledningvertikalavstand">5.2.2.6. «FeatureType» LedningVertikalAvstand (abstrakt)</a></li>
+<li><a href="#ledningvertikalavstand">5.2.2.6. «FeatureType» LedningVertikalAvstand</a></li>
 <li><a href="#kumlokk">5.2.2.7. «FeatureType» Kumlokk</a></li>
 <li><a href="#luftledning">5.2.2.8. «FeatureType» Luftledning</a></li>
 <li><a href="#lysarmatur">5.2.2.9. «FeatureType» Lysarmatur</a></li>
@@ -813,16 +813,15 @@ forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.</p>
 <div class="ulist">
 <ul>
 <li>
+<p>Innført objekttypen LedningVertikalAvstand med assosiasjon til Trase, Luftledning og Jordingsledning (i stedet for datatypen VertikalAvstandLedning i FLB-Ledning 5.0)</p>
+</li>
+<li>
 <p>Lagt inn taggen inlineOrByReference=byReference på alle assosiasjoner</p>
 </li>
+<li>
+<p>Justert/rettet taggen SOSI_lengde på real-egenskaper på objekttype Vindturbin</p>
+</li>
 </ul>
-</div>
-<div class="sidebarblock">
-<div class="content">
-<div class="paragraph">
-<p>Må avklares: Ny modellering av maks/min vertikalutrekning som håndteres i dataflyten (geosynkronisering ++) må på plass</p>
-</div>
-</div>
 </div>
 </div>
 <div class="sect3">
@@ -1480,11 +1479,11 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">description</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-Ledning 5.0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FKB-Ledning 5.1</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">designation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">"Product specification FKB-Ledning 5.0"@en</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">"Product specification FKB-Ledning 5.1"@en</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">language</p></td>
@@ -1500,7 +1499,7 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_modellstatus</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">utkastOgSkjult</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">utkast</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">SOSI_spesifikasjonstype</p></td>
@@ -1535,16 +1534,16 @@ Ikke angitt</p>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Hoveddiagram FKB-Ledning 5.0.png"><img src="diagrammer/Hoveddiagram%20FKB-Ledning%205.0.png" alt="Hoveddiagram FKB Ledning 5.0"></a>
+<a class="image" href="diagrammer/Hoveddiagram FKB-Ledning 5.1.png"><img src="diagrammer/Hoveddiagram%20FKB-Ledning%205.1.png" alt="Hoveddiagram FKB Ledning 5.1"></a>
 </div>
-<div class="title">Figur 1. Hoveddiagram FKB-Ledning 5.0</div>
+<div class="title">Figur 1. Hoveddiagram FKB-Ledning 5.1</div>
 </div>
 <hr>
 <div class="imageblock">
 <div class="content">
-<a class="image" href="diagrammer/Pakkerealisering FKB-Ledning 5.0.png"><img src="diagrammer/Pakkerealisering%20FKB-Ledning%205.0.png" alt="Pakkerealisering FKB Ledning 5.0"></a>
+<a class="image" href="diagrammer/Pakkerealisering FKB-Ledning 5.1.png"><img src="diagrammer/Pakkerealisering%20FKB-Ledning%205.1.png" alt="Pakkerealisering FKB Ledning 5.1"></a>
 </div>
-<div class="title">Figur 2. Pakkerealisering FKB-Ledning 5.0</div>
+<div class="title">Figur 2. Pakkerealisering FKB-Ledning 5.1</div>
 </div>
 <div style="page-break-after: always;"></div>
 <hr>
@@ -1796,10 +1795,10 @@ Ikke angitt</p>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Subtyper:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#kabelkanal">«FeatureType» Kabelkanal</a><br>
-<a href="#trase">«FeatureType» Trase</a><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#luftledning">«FeatureType» Luftledning</a><br>
+<a href="#kabelkanal">«FeatureType» Kabelkanal</a><br>
 <a href="#jordingsledning">«FeatureType» Jordingsledning</a><br>
-<a href="#luftledning">«FeatureType» Luftledning</a><br></p></td>
+<a href="#trase">«FeatureType» Trase</a><br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Realisering av:</p></td>
@@ -2018,10 +2017,10 @@ SOSI_navn: NVDBPEKER<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Subtyper:</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#ledningvertikalavstand">«FeatureType» LedningVertikalAvstand</a><br>
-<a href="#koplinggrense">«FeatureType» KoplingGrense</a><br>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#koplinggrense">«FeatureType» KoplingGrense</a><br>
 <a href="#ledning">«FeatureType» Ledning</a><br>
 <a href="#koplingpunkt">«FeatureType» KoplingPunkt</a><br>
+<a href="#ledningvertikalavstand">«FeatureType» LedningVertikalAvstand</a><br>
 <a href="#koplingsenterlinje">«FeatureType» KoplingSenterlinje</a><br></p></td>
 </tr>
 <tr>
@@ -2312,7 +2311,7 @@ Ytterkant topp kumkonstruksjon der denne er synlig.</p>
 <hr>
 </div>
 <div class="sect4">
-<h5 id="ledningvertikalavstand">5.2.2.6. «FeatureType» LedningVertikalAvstand (abstrakt)</h5>
+<h5 id="ledningvertikalavstand">5.2.2.6. «FeatureType» LedningVertikalAvstand</h5>
 <div class="paragraph">
 <p><strong>Definisjon:</strong> punkt som angir maks/min vertikalavstand for et luftspenn</p>
 </div>
@@ -2439,7 +2438,7 @@ SOSI_navn: ANTALL_LASERPUNKT<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rollenavn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tilknyttetJordingsledning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tilknyttetLuftledning</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
@@ -2451,7 +2450,7 @@ SOSI_navn: ANTALL_LASERPUNKT<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#jordingsledning">«FeatureType» Jordingsledning</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#luftledning">«FeatureType» Luftledning</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -2487,7 +2486,7 @@ SOSI_navn: ANTALL_LASERPUNKT<br></p></td>
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Rollenavn:</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tilknyttetLuftledning</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>tilknyttetJordingsledning</strong></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Definisjon:</p></td>
@@ -2499,7 +2498,7 @@ SOSI_navn: ANTALL_LASERPUNKT<br></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Til klasse</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#luftledning">«FeatureType» Luftledning</a></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#jordingsledning">«FeatureType» Jordingsledning</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -8579,7 +8578,7 @@ av denne lisensen og ikke kan viderebrukes</p>
 <div id="footer">
 <div id="footer-text">
 Versjon 5.1<br>
-Last updated 2023-12-01 14:01:50 +0100
+Last updated 2023-12-21 12:38:05 +0100
 </div>
 </div>
 </body>
