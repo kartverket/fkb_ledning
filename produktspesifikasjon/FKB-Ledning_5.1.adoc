@@ -1,19 +1,18 @@
 :datasett: FKB-Ledning
+:publisert: 2024-01-15
 :versjon: 5.1
-:publisert: 2023-12-01
+:skjemaversjon: 5.1
+:versjon-forrige: 5.0.1
+:versjon-erstattet-av: 5.1
+:underversjon: 2024-02-01
+:underversjon-forrige: 2022-01-01
 :metadata-url: https://kartkatalog.geonorge.no/metadata/fkb-ledning/6e05aefb-f90e-4c7d-9fb9-299574d0bbf6
-:versjon-forrige: 5.0
-:skjema-versjon: 5.1
-:dokumentstatus: 4
+:dokumentstatus: 2
 :geonorgeKodelister-url: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
 :reginstr-url-punktsky: https://sosi.geonorge.no/registreringsinstrukser/FKB-Ledning/5.0/Punktsky_2022-01-01
 // All informasjon i hode over denne linja må fylles ut for hvert datasett. Linjene under settes av de gitte variablene over og i adoc_parametere.adoc
-include::../felles_prodspek/adoc_parametere.adoc[]
-= SOSI-standardisert produktspesifikasjon: {fkbdatasett}
-Geovekst
-{versjon}, 2024-02-01
+include::../felles_prodspek/filhode.adoc[]
 
-include::../felles_prodspek/dokument_metadata.adoc[]
 
 <<<
 
