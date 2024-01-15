@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.0" version="5.0">
+<?xml version="1.0" encoding="UTF-8"?><schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:app="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.1" xmlns:gml="http://www.opengis.net/gml/3.2" xmlns:sc="http://www.interactive-instruments.de/ShapeChange/AppInfo" elementFormDefault="qualified" targetNamespace="http://skjema.geonorge.no/SOSI/produktspesifikasjon/FKB-Ledning/5.1" version="5.1">
   <annotation>
     <documentation>Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommunikasjon, belysningsanlegg, ledningsanlegg tilknyttet bane og vann- og avløpsanlegg. Det er kun objekter som er synlig i terrenget (ligger over bakkenivå) som inngår i produktspesifikasjonen. Produktspesifikasjonen er tenkt benyttet ved datafangst av ledningsobjekter.
 
-FKB-Ledning versjon 5.0 baserer seg på generelle konsepter definert i SOSI del 1 versjon 4.5 og SOSI del 2 Ledning versjon 4.6.</documentation>
+FKB-Ledning versjon 5.1 baserer seg på generelle konsepter definert i SOSI del 1 versjon 4.5 og SOSI del 2 Ledning versjon 4.6.</documentation>
   </annotation>
   <import namespace="http://www.interactive-instruments.de/ShapeChange/AppInfo" schemaLocation="http://shapechange.net/resources/schema/ShapeChangeAppinfo.xsd"/>
   <import namespace="http://www.opengis.net/gml/3.2" schemaLocation="http://schemas.opengis.net/gml/3.2.1/gml.xsd"/>
@@ -223,14 +223,14 @@ Merknad : Verdien for navnerom vil eies av den dataprodusent som har ansvar for 
       <element ref="app:Identifikasjon"/>
     </sequence>
   </complexType>
-  <element name="Jordingsledning" substitutionGroup="app:LidarMetadata" type="app:JordingsledningType">
+  <element name="Jordingsledning" substitutionGroup="app:Ledning" type="app:JordingsledningType">
     <annotation>
       <documentation>ledning hvor formålet er å lede farlige overspenninger til jord. ledningen er under normale forhold ikke strømførende</documentation>
     </annotation>
   </element>
   <complexType name="JordingsledningType">
     <complexContent>
-      <extension base="app:LidarMetadataType">
+      <extension base="app:LedningType">
         <sequence/>
       </extension>
     </complexContent>
@@ -385,10 +385,11 @@ Ytterkant topp kumkonstruksjon der denne er synlig.</documentation>
               </appinfo>
             </annotation>
           </element>
-          <element minOccurs="0" name="kum" type="app:KumPropertyType">
+          <element minOccurs="0" name="kum" type="gml:ReferenceType">
             <annotation>
               <documentation>kum til kumlokk</documentation>
               <appinfo>
+                <targetElement xmlns="http://www.opengis.net/gml/3.2">app:Kum</targetElement>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">KUM</taggedValue>
               </appinfo>
             </annotation>
@@ -462,36 +463,70 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</docume
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element abstract="true" name="LidarMetadata" substitutionGroup="app:Ledning" type="app:LidarMetadataType">
+  <element name="LedningVertikalAvstand" substitutionGroup="app:Nettverkskomponent" type="app:LedningVertikalAvstandType">
     <annotation>
-      <documentation>informasjon om punktskyen som ligger til grunn for klassifisering og vektorisering</documentation>
+      <documentation>punkt som angir maks/min vertikalavstand for et luftspenn</documentation>
     </annotation>
   </element>
-  <complexType abstract="true" name="LidarMetadataType">
+  <complexType name="LedningVertikalAvstandType">
     <complexContent>
-      <extension base="app:LedningType">
+      <extension base="app:NettverkskomponentType">
         <sequence>
+          <element name="punkt" type="gml:PointPropertyType">
+            <annotation>
+              <documentation>posisjon for måling av vertikalavstand</documentation>
+            </annotation>
+          </element>
+          <element name="vertikalAvstandType" type="gml:CodeType">
+            <annotation>
+              <documentation>angir om det er maks/min eller ev. en annen type vertikalavstand som objektet angir</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERTIKALAVSTANDTYPE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element name="vertikalAvstand" type="double">
+            <annotation>
+              <documentation>avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate
+
+Enhet: meter</documentation>
+              <appinfo>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERTIKALAVSTAND</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
           <element minOccurs="0" name="antallLaserPunkt" type="integer">
             <annotation>
-              <documentation>antallet klassifiserte laserpunkt som er med på å bestemme vektorisert objekt</documentation>
+              <documentation>antallet klassifiserte laserpunkt som er med på å bestemme vektorisert objekt. Kan angis der laserdata er brukt til innmåling</documentation>
               <appinfo>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">ANTALL_LASERPUNKT</taggedValue>
               </appinfo>
             </annotation>
           </element>
-          <element minOccurs="0" name="maksVertikalAvstand" type="app:VertikalAvstandLedningPropertyType">
+          <element maxOccurs="unbounded" minOccurs="0" name="tilknyttetJordingsledning" type="gml:ReferenceType">
             <annotation>
-              <documentation>maksimal avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate</documentation>
+              <documentation>referanse til objekt som vertikalavstanden er knyttet til</documentation>
               <appinfo>
-                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MAKS_VERTIKALUTSTREKNING</taggedValue>
+                <targetElement xmlns="http://www.opengis.net/gml/3.2">app:Jordingsledning</targetElement>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">TILKNYTTET_JORDINGSLEDNING</taggedValue>
               </appinfo>
             </annotation>
           </element>
-          <element minOccurs="0" name="minVertikalAvstand" type="app:VertikalAvstandLedningPropertyType">
+          <element maxOccurs="unbounded" minOccurs="0" name="tilknyttetTrase" type="gml:ReferenceType">
             <annotation>
-              <documentation>minste avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate</documentation>
+              <documentation>referanse til objekt som vertikalavstanden er knyttet til</documentation>
               <appinfo>
-                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">MIN_VERTIKALUTSTREKNING</taggedValue>
+                <targetElement xmlns="http://www.opengis.net/gml/3.2">app:Trase</targetElement>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">TILKNYTTET_TRASE</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="tilknyttetLuftledning" type="gml:ReferenceType">
+            <annotation>
+              <documentation>referanse til objekt som vertikalavstanden er knyttet til</documentation>
+              <appinfo>
+                <targetElement xmlns="http://www.opengis.net/gml/3.2">app:Luftledning</targetElement>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">TILKNYTTET_LUFTLEDNING</taggedValue>
               </appinfo>
             </annotation>
           </element>
@@ -499,21 +534,21 @@ Merknad: Denne er identisk med ..KVALITET i tidligere versjoner av SOSI.</docume
       </extension>
     </complexContent>
   </complexType>
-  <complexType name="LidarMetadataPropertyType">
+  <complexType name="LedningVertikalAvstandPropertyType">
     <sequence minOccurs="0">
-      <element ref="app:LidarMetadata"/>
+      <element ref="app:LedningVertikalAvstand"/>
     </sequence>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Luftledning" substitutionGroup="app:LidarMetadata" type="app:LuftledningType">
+  <element name="Luftledning" substitutionGroup="app:Ledning" type="app:LuftledningType">
     <annotation>
       <documentation>vaier/kabel mellom to faste forankringspunkt, som er eller kan være strøm- eller signalførende</documentation>
     </annotation>
   </element>
   <complexType name="LuftledningType">
     <complexContent>
-      <extension base="app:LidarMetadataType">
+      <extension base="app:LedningType">
         <sequence>
           <element name="fase" type="gml:CodeType">
             <annotation>
@@ -633,19 +668,12 @@ Enhet: meter</documentation>
               </appinfo>
             </annotation>
           </element>
-          <element maxOccurs="unbounded" minOccurs="0" name="omriss" type="app:MasteomrissPropertyType">
+          <element maxOccurs="unbounded" minOccurs="0" name="omriss" type="gml:ReferenceType">
             <annotation>
               <documentation>omrisset til mast</documentation>
               <appinfo>
+                <targetElement xmlns="http://www.opengis.net/gml/3.2">app:Masteomriss</targetElement>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OMRISS</taggedValue>
-              </appinfo>
-            </annotation>
-          </element>
-          <element maxOccurs="unbounded" minOccurs="0" name="bardun" type="app:BardunPropertyType">
-            <annotation>
-              <documentation>bardun til mast</documentation>
-              <appinfo>
-                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BARDUN</taggedValue>
               </appinfo>
             </annotation>
           </element>
@@ -655,6 +683,15 @@ Enhet: meter</documentation>
               <appinfo>
                 <reversePropertyName xmlns="http://www.opengis.net/gml/3.2">app:iMast</reversePropertyName>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">HARARMATUR</taggedValue>
+              </appinfo>
+            </annotation>
+          </element>
+          <element maxOccurs="unbounded" minOccurs="0" name="bardun" type="gml:ReferenceType">
+            <annotation>
+              <documentation>bardun til mast</documentation>
+              <appinfo>
+                <targetElement xmlns="http://www.opengis.net/gml/3.2">app:Bardun</targetElement>
+                <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">BARDUN</taggedValue>
               </appinfo>
             </annotation>
           </element>
@@ -799,10 +836,11 @@ Ved peker til NRL eller NVDB registreres dette under sine respektive peker</docu
               </appinfo>
             </annotation>
           </element>
-          <element minOccurs="0" name="omriss" type="app:NettverkstasjonomrissPropertyType">
+          <element minOccurs="0" name="omriss" type="gml:ReferenceType">
             <annotation>
               <documentation>omrisset til nettverkstasjon</documentation>
               <appinfo>
+                <targetElement xmlns="http://www.opengis.net/gml/3.2">app:Nettverkstasjonomriss</targetElement>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OMRISS</taggedValue>
               </appinfo>
             </annotation>
@@ -941,14 +979,14 @@ Kan også være på størrelse med kiosk.</documentation>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
   </complexType>
-  <element name="Trase" substitutionGroup="app:LidarMetadata" type="app:TraseType">
+  <element name="Trase" substitutionGroup="app:Ledning" type="app:TraseType">
     <annotation>
       <documentation>den mest mulig geografisk riktige posisjonen for en framføring av ledning(er)</documentation>
     </annotation>
   </element>
   <complexType name="TraseType">
     <complexContent>
-      <extension base="app:LidarMetadataType">
+      <extension base="app:LedningType">
         <sequence>
           <element minOccurs="0" name="trasenavn" type="string">
             <annotation>
@@ -971,43 +1009,6 @@ Dette er gjerne en tekstlig beskrivelse av traséens plassering, for eksempel "f
     </sequence>
     <attributeGroup ref="gml:AssociationAttributeGroup"/>
     <attributeGroup ref="gml:OwnershipAttributeGroup"/>
-  </complexType>
-  <element name="VertikalAvstandLedning" substitutionGroup="gml:AbstractObject" type="app:VertikalAvstandLedningType">
-    <annotation>
-      <documentation>ledningens høyde over/til terreng, vann eller sjø</documentation>
-    </annotation>
-  </element>
-  <complexType name="VertikalAvstandLedningType">
-    <sequence>
-      <element name="vertikalAvstandPosisjon" type="gml:PointPropertyType">
-        <annotation>
-          <documentation>posisjonen til det punktet på objektet hvor vertikal avstand er angitt
-
-Merknad FKB:
-Ved SOSI-format realisering skal vertikalhøydeposisjonen angis på følgende måte: ...NØHKOOR "&lt;KOORSYS&gt; &lt;N&gt; &lt;Ø&gt; &lt;H&gt;" 
-
-Eksempel: ...NØHKOOR "22 7175399.09 395657.11 219.82"</documentation>
-          <appinfo>
-            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">NØHKOOR</taggedValue>
-          </appinfo>
-        </annotation>
-      </element>
-      <element name="vertikalAvstand" type="double">
-        <annotation>
-          <documentation>avstand i vertikalplanet fra objektet til under-/omkringliggende terreng eller vannoverflate
-
-Enhet: meter</documentation>
-          <appinfo>
-            <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">VERTIKALAVSTAND</taggedValue>
-          </appinfo>
-        </annotation>
-      </element>
-    </sequence>
-  </complexType>
-  <complexType name="VertikalAvstandLedningPropertyType">
-    <sequence>
-      <element ref="app:VertikalAvstandLedning"/>
-    </sequence>
   </complexType>
   <element name="Vindturbin" substitutionGroup="app:KoplingPunkt" type="app:VindturbinType">
     <annotation>
@@ -1038,10 +1039,11 @@ Enhet: meter</documentation>
               </appinfo>
             </annotation>
           </element>
-          <element minOccurs="0" name="omriss" type="app:VindturbinomrissPropertyType">
+          <element minOccurs="0" name="omriss" type="gml:ReferenceType">
             <annotation>
               <documentation>omrisset til vindturbinen</documentation>
               <appinfo>
+                <targetElement xmlns="http://www.opengis.net/gml/3.2">app:Vindturbinomriss</targetElement>
                 <taggedValue xmlns="http://www.interactive-instruments.de/ShapeChange/AppInfo" tag="SOSI_navn">OMRISS</taggedValue>
               </appinfo>
             </annotation>
