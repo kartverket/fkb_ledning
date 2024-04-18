@@ -1,13 +1,13 @@
 :datasett: FKB-Ledning
-:publisert: 2024-01-15
+:publisert: 2024-05-01
 :versjon: 5.1
 :skjemaversjon: 5.1
 :versjon-forrige: 5.0.1
 :versjon-erstattet-av: 5.1
-:underversjon: 2024-02-01
+:underversjon: 2024-05-01
 :underversjon-forrige: 2022-01-01
 :metadata-url: https://kartkatalog.geonorge.no/metadata/fkb-ledning/6e05aefb-f90e-4c7d-9fb9-299574d0bbf6
-:dokumentstatus: 2
+:dokumentstatus: 1
 :geonorgeKodelister-url: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
 :reginstr-url-punktsky: https://sosi.geonorge.no/registreringsinstrukser/FKB-Ledning/5.0/Punktsky_2022-01-01
 // All informasjon i hode over denne linja må fylles ut for hvert datasett. Linjene under settes av de gitte variablene over og i adoc_parametere.adoc
@@ -28,8 +28,7 @@ FKB-Ledning versjon 5.0 baserer seg på generelle konsepter i FKB Generell del o
 
 Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for {datasett} 5.0 finnes på {reginstr-url}/Fotogrammetrisk_2022-01-01[{reginstr-url}/Fotogrammetrisk_2022-01-01]. {reginstr-url-punktsky}[Registreringsinstruks Punktsky FKB-Ledning] er også relevant for innsamling av utvalgte objekttyper.
 
-Forvaltningsspesifikasjonene for Bane, Belysning, eKom og EL som ble utarbeidet i 
-forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.
+Forvaltningsspesifikasjonene for Bane, Belysning, eKom og EL som ble utarbeidet i forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.
 
 Denne produktspesifikasjonen er utarbeidet iht. SOSI produktspesifikasjoner – Krav og godkjenning 5.0 <<SOSI-KRAV>>. UML-modellen som ligger til grunn for innhold i diagrammene og dokumentasjon i kap. 5, følger reglene i SOSI Regler for UML-modellering, versjon 5.1 <<SOSI-UML>>. https://sosi.geonorge.no/veiledere/UML[Denne veilederen] gir hjelp til å lese UML-diagrammene.
 
@@ -56,7 +55,7 @@ Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de v
 
 ==== Endringer fra FKB-Leding 5.0 til FKB-Ledning 5.1
 
-* Innført objekttypen LedningVertikalAvstand med assosiasjon til Trase, Luftledning og Jordingsledning (i stedet for datatypen VertikalAvstandLedning i FLB-Ledning 5.0)
+* Innført objekttypen LedningVertikalAvstand med assosiasjon til Trase, Luftledning og Jordingsledning (i stedet for datatypen VertikalAvstandLedning i FKB-Ledning 5.0)
 * Lagt inn taggen inlineOrByReference=byReference på alle assosiasjoner
 * Justert/rettet taggen SOSI_lengde på real-egenskaper på objekttype Vindturbin
 
@@ -133,10 +132,10 @@ FKB-Ledning
 FKB-Ledning
 
 ==== Versjon
-5.0
+5.1
 
 === Referansedato
-2022-01-01
+2024-05-01
 
 === Ansvarlig organisasjon
 Geovekst
@@ -179,7 +178,7 @@ include::../felles_prodspek/kap4_omfang.adoc[]
 <<HeleDatasettet,Hele datasettet>>
 
 // Inneholder adoc eksport fra Enterprise Architect
-include::kap5.adoc[]
+include::modellRapport.adoc[]
 
 <<<
 
@@ -265,7 +264,7 @@ En SOSI-eksempelfil er tilgjengelig link:{skjema-url}/eksempel[her].
 Under en utlisting av SOSI-formatrealiseringen:
 
 
-include::sosi-realisering.adoc[]
+include::SOSIformatRealisering.adoc[]
 
 <<<
 
