@@ -7,12 +7,12 @@
 :geonorgeKodelister-url: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
 :reginstr-url-punktsky: https://sosi.geonorge.no/registreringsinstrukser/FKB-Ledning/5.0/Punktsky_2022-01-01
 // All informasjon i hode over denne linja må fylles ut for hvert datasett. Linjene under settes av de gitte variablene over og i adoc_parametere.adoc
-include::../../felles/adoc_parametere.adoc[]
+include::../felles_prodspek/adoc_parametere.adoc[]
 = SOSI-standardisert produktspesifikasjon: {fkbdatasett}
 Geovekst
 {versjon}, 2022-01-01
 
-include::../../felles/dokument_metadata.adoc[]
+include::../felles_prodspek/dokument_metadata.adoc[]
 
 <<<
 
@@ -99,18 +99,18 @@ Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de v
 :xrefstyle: basic
 
 === Normative referanser
-include::../../felles/kap14_normativ_ref.adoc[]
+include::../felles_prodspek/kap14_normativ_ref.adoc[]
 
 <<<
 
 == Definisjoner og forkortelser
 === Definisjoner
 
-include::../../felles/kap21_definisjoner.adoc[]
+include::../felles_prodspek/kap21_definisjoner.adoc[]
 
 === Forkortelser
 
-include::../../felles/kap22_forkortelser.adoc[]
+include::../felles_prodspek/kap22_forkortelser.adoc[]
 
 <<<
 
@@ -147,12 +147,12 @@ Spesifikasjonen gjelder for ledningsdata innenfor elektrisitet, elektrisk kommun
 
 === Formål
 // Fellesdel for FKB generell del og alle FKB-produktspesifikasjoner
-include::../../felles/kap38_formal.adoc[]
+include::../felles_prodspek/kap38_formal.adoc[]
 
 FKB-Ledning bidrar med å gi et detaljert bilde av ledningsinfrastrukturen som er synlig over bakken eller i lufta.
 
 // Fellesdel som dekker kap 3.9 - 3.12 for alle FKB-produktspesifikasjoner
-include::../../felles/kap39-312_representasjon.adoc[]
+include::../felles_prodspek/kap39-312_representasjon.adoc[]
 
 === Supplerende beskrivelse
 Data ikke angitt
@@ -161,7 +161,7 @@ Data ikke angitt
 
 == Spesifikasjonsomfang
 // Fellesdel som dekker kap 4 for alle FKB-produktspesifikasjoner
-include::../../felles/kap4_omfang.adoc[]
+include::../felles_prodspek/kap4_omfang.adoc[]
 
 <<<
 
@@ -177,13 +177,13 @@ include::kap5.adoc[]
 
 == Referansesystem
 
-include::../../felles/kap6_referansesystem.adoc[]
+include::../felles_prodspek/kap6_referansesystem.adoc[]
 
 <<<
 
 == Kvalitet
 
-include::../../felles/kap7_kvalitet.adoc[]
+include::../felles_prodspek/kap7_kvalitet.adoc[]
 
 <<<
 
@@ -201,7 +201,7 @@ Administrativ datafangst er en sentral del av datafangsten knyttet til ledning. 
 
 == Datavedlikehold
 
-include::../../felles/kap9_vedlikehold.adoc[]
+include::../felles_prodspek/kap9_vedlikehold.adoc[]
 
 <<<
 
@@ -217,7 +217,7 @@ Presentasjonsregler for FKB-data er angitt i skjermkartografispesifikasjonen: ht
 
 == Leveranse
 
-include::../../felles/kap11_leveranse.adoc[]
+include::../felles_prodspek/kap11_leveranse.adoc[]
 
 <<<
 
@@ -233,7 +233,7 @@ Ingen angitt informasjon
 
 === Metadataspesifikasjon
 
-include::../../felles/kap13_metadata.adoc[]
+include::../felles_prodspek/kap13_metadata.adoc[]
 
 <<<
 
@@ -271,7 +271,7 @@ TIP: Informasjon, fortrinnsvis av informativ art, som kan være nyttig for bruke
 
 [discrete]
 == Lisensvilkår
-include::../../felles/lisensvilkaar.adoc[]
+include::../felles_prodspek/lisensvilkaar.adoc[]
 
 ////
 <<<
