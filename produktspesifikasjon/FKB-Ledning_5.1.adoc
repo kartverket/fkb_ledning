@@ -1,10 +1,10 @@
 :datasett: FKB-Ledning
-:publisert: 2024-05-01
+:publisert: 2024-07-01
 :versjon: 5.1
 :skjemaversjon: 5.1
 :versjon-forrige: 5.0.1
 :versjon-erstattet-av: 5.1
-:underversjon: 2024-05-01
+:underversjon: 2024-07-01
 :underversjon-forrige: 2022-01-01
 :metadata-url: https://kartkatalog.geonorge.no/metadata/fkb-ledning/6e05aefb-f90e-4c7d-9fb9-299574d0bbf6
 :dokumentstatus: 1
@@ -58,7 +58,7 @@ Endringsloggene for det enkelte datasett har som ambisjonsnivå å beskrive de v
 * Innført objekttypen LedningVertikalAvstand med assosiasjon til Trase, Luftledning og Jordingsledning (i stedet for datatypen VertikalAvstandLedning i FKB-Ledning 5.0)
 * Lagt inn taggen inlineOrByReference=byReference på alle assosiasjoner
 * Justert/rettet taggen SOSI_lengde på real-egenskaper på objekttype Vindturbin
-
+* Justeringer/forbedringer i dokumentasjonsmal. Dokumentasjon kun tilgjengelig på HTML-format.
 
 
 ==== Endringer fra FKB-Ledning 4.6 til FKB-Ledning 5.0
@@ -126,16 +126,16 @@ include::../felles_prodspek/kap22_forkortelser.adoc[]
 === Unik identifisering
 
 ==== Kortnavn
-FKB-Ledning
+FKBLedning
 
 ==== Fullstendig navn
 FKB-Ledning
 
 ==== Versjon
-5.1
+{versjon}
 
 === Referansedato
-2024-05-01
+{underversjon]
 
 === Ansvarlig organisasjon
 Geovekst
@@ -242,16 +242,6 @@ Ingen angitt informasjon
 
 include::../felles_prodspek/kap13_metadata.adoc[]
 
-<<<
-
-[appendix]
-== GML-realisering
-
-GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI-GML>>. Realiseringen defineres av følgende filer:
-
-* link:{skjema-url}/FKBLedning.xsd[GML-Skjema]
-* link:{skjema-url}/FKBLedning.sch[Schematron-regler til validering av tilleggskrav til datainnhold og -struktur utover det som defineres i GML-skjemafila]
-* link:{skjema-url}/eksempel[GML-eksempelfil]
 
 <<<
 
@@ -268,11 +258,17 @@ include::SOSIformatRealisering.adoc[]
 
 <<<
 
-////
 [appendix]
-== Annen nyttig informasjon til brukere
-TIP: Informasjon, fortrinnsvis av informativ art, som kan være nyttig for brukere, samles i egne vedlegg
-////
+== GML-realisering
+
+GML-realiseringen følger kravene i "Realisering i GML-format 5.0" <<SOSI-GML>>. Realiseringen defineres av følgende filer:
+
+* link:{skjema-url}/FKBLedning.xsd[GML-Skjema]
+* link:{skjema-url}/FKBLedning.sch[Schematron-regler til validering av tilleggskrav til datainnhold og -struktur utover det som defineres i GML-skjemafila]
+* link:{skjema-url}/eksempel[GML-eksempelfil]
+
+<<<
+
 
 :sectnums!:
 
