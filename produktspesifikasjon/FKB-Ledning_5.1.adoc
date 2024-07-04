@@ -10,6 +10,7 @@
 :dokumentstatus: 1
 :geonorgeKodelister-url: https://register.geonorge.no/sosi-kodelister/fkb/ledning/5.0
 :reginstr-url-punktsky: https://sosi.geonorge.no/registreringsinstrukser/FKB-Ledning/5.0/Punktsky_2022-01-01
+:reginst-url: https://sosi.geonorge.no/registreringsinstrukser/FKB-Ledning/5.0/Fotogrammetrisk_2023-01-01
 // All informasjon i hode over denne linja må fylles ut for hvert datasett. Linjene under settes av de gitte variablene over og i adoc_parametere.adoc
 include::../felles_prodspek/filhode.adoc[]
 
@@ -26,7 +27,8 @@ FKB-Ledning omfatter ledningsdata innenfor elektrisitet, elektrisk kommunikasjon
 
 FKB-Ledning versjon 5.0 baserer seg på generelle konsepter i FKB Generell del og SOSI del 2 Ledning versjon 4.6.
 
-Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er samlet i egne Fotogrammetriske registreringsinstrukser. Fotogrammetrisk registreringsinstruks for {datasett} 5.0 finnes på {reginstr-url}/Fotogrammetrisk_2022-01-01[{reginstr-url}/Fotogrammetrisk_2022-01-01]. {reginstr-url-punktsky}[Registreringsinstruks Punktsky FKB-Ledning] er også relevant for innsamling av utvalgte objekttyper.
+Mye av detaljinformasjonen om registrering av de ulike objekttypene i FKB er samlet i egne Fotogrammetriske registreringsinstrukser. 
+Fotogrammetrisk registreringsinstruks for {datasett} 5.0 finnes på {reginst-url}. {reginstr-url-punktsky}[Registreringsinstruks Punktsky FKB-Ledning] er også relevant for innsamling av utvalgte objekttyper.
 
 Forvaltningsspesifikasjonene for Bane, Belysning, eKom og EL som ble utarbeidet i forbindelse med innføringen av FKB-Ledning 4.5 er ikke videreført.
 
